@@ -2,7 +2,7 @@
 
 ### Solution 1 HashSet
 #### Idea:
-first sort the array, then run through all possible first element of a triplet. For each possible first element  make a  2Sum sweep of the remaining part of the array.
+First sort the array, then run through all possible first element of a triplet. For each possible first element  make a  2Sum sweep of the remaining part of the array.
 in order to sum 0,for the 3 elements ,get the larger number toward right  or get the smaller number toward left.
 And utilize hashset to avoid duplicated result.
 #### Time Complexity:
@@ -45,7 +45,8 @@ public class Solution {
 
 ---
 ### Solution 2 
-#### Idea: sort the array, then run through all indices of a possible first element of a triplet,meanwhile skip the duplicated number.
+#### Idea: 
+First sort the array, then run through all possible first element of a triplet, meanwhile skip the duplicated number.
 For each possible first element  make a  2Sum sweep of the remaining part of the array.
 in order to sum 0,for the 3 elements ,get the larger number toward right  or get the smaller number toward left.
 
