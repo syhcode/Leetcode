@@ -2,7 +2,7 @@
 
 ### Solution 1
 #### Idea:
-like Q15, first sort the array, then run through all of possible first element of a triplet. For each possible first element  make a  2Sum sweep of the remaining part of the array.
+Like Q15, first sort the array, then run through all of possible first element of a triplet. For each possible first element  make a  2Sum sweep of the remaining part of the array.
 in order to sum close to target,for the 3 elements ,get the larger number toward right  or get the smaller number toward left ,compare the sum result and record the abs-closer-to-target result.
 
 #### Time Complexity:

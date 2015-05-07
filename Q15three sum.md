@@ -48,7 +48,7 @@ public class Solution {
 #### Idea: 
 First sort the array, then run through all possible first element of a triplet, meanwhile skip the duplicated number.
 For each possible first element  make a  2Sum sweep of the remaining part of the array.
-in order to sum 0,for the 3 elements ,get the larger number toward right  or get the smaller number toward left.
+In order to sum 0,for the 3 elements ,get the larger number toward right  or get the smaller number toward left.
 
 #### Time Complexity:
 O(n^2)
