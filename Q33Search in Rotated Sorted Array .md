@@ -3,7 +3,7 @@
 ### Solution 1: binary search in 3 situation
 #### Idea: 
 considering the three cases for rotated array,and search in each situation recursively.
-![](https://github.com/syhcode/Leetcode/blob/master/image/q33.jpg)
+The three cases as picture: ![](https://github.com/syhcode/Leetcode/blob/master/image/q33.jpg)
 #### Time Complexity:
 O(log(n))
 #### Space Complexity:
@@ -26,8 +26,7 @@ public class Solution {
        if (A[right] == target) return right;  
          
         //situation 1 :  
-        
-        
+ 
         if (A[left] < A[right]) {   
             if (target < A[left] || target > A[right]) {    //target not exist 
               return -1;  
@@ -38,6 +37,7 @@ public class Solution {
             }  
        }   
         //situation 2 : 
+        
         else if (A[left] < A[mid]) {   
             if (target > A[left] && target < A[mid]) {      //target in left branch  
                return binarySearch(A, left+1, mid-1, target);  
@@ -46,6 +46,7 @@ public class Solution {
            }  
         }   
         //situation 3
+        
        else {   //A[left]>A[mid]
             if (target > A[mid] && target < A[right]) {     //target in right branch 
                return binarySearch(A, mid+1, right-1, target);  
