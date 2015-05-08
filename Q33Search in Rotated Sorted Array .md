@@ -3,11 +3,11 @@
 ### Solution 1: binary search in 3 situation
 #### Idea: 
 considering the three cases for rotated array,and search in each situation recursively.
-
+![](https://github.com/syhcode/Leetcode/blob/master/image/q33.jpg)
 #### Time Complexity:
-O(K^2)
+O(log(n))
 #### Space Complexity:
-O(K)
+O(1)
 #### Source code:
 ```
 public class Solution {  
