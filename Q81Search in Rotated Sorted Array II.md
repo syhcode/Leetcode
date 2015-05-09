@@ -6,7 +6,7 @@ Just like Q33,considering the three cases for rotated array,and search in each s
 ele[left],ele[right] or ele[left],ele[mid],wipe out these elements by "right-1" during binary search. 
 And the three cases as picture: ![](https://github.com/syhcode/Leetcode/blob/master/image/q33.jpg)
 #### Time Complexity:
-O(log(n))
+O(log(n)) ~ O(n) worst case:all elements are same .
 #### Space Complexity:
 O(1)
 #### Source code:
