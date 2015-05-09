@@ -2,7 +2,7 @@
 
 ### Solution 1: binary search in 3 situation
 #### Idea: 
-Like Q33,considering the three cases for rotated array,and search in each situation recursively.analyze each cases,in 1st case A[left] is min, also we can draw a 
+Like Q33,considering the three cases for rotated array,and search in each situation recursively.Analyze each cases,in 1st case A[left] is min, also we can draw a 
 conclusion for the left two cases that if A[left]>A[left+1] ,A[left+1] is min or if A[right] <A [right-1], A[right] is min. 
 The three cases as picture: ![](https://github.com/syhcode/Leetcode/blob/master/image/q33.jpg)
 #### Time Complexity:
