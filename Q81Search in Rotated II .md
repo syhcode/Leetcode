@@ -29,9 +29,9 @@ public class Solution {
 
       // skip the duplicated non-value left(head) and right(rear) element while searching.
       
-       if(A[left]==A[right]&& A[left]!=target)  return binarySearch(A, left+1, right-1, target);
+       if(A[left]==A[right]&& A[left]!=target)  return binarySearch(A, left, right-1, target);
       
-       if(A[left]==A[mid]&& A[left]!=target)  return binarySearch(A, left+1, right-1, target);
+       if(A[left]==A[mid]&& A[left]!=target)  return binarySearch(A, left, right-1, target);
         
         //situation 1 :  
         
