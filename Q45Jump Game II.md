@@ -4,7 +4,7 @@
 #### Idea:
 from the first position,greedily update the accessible position by each element,then, we can define the access area collection as the graph,
 from the graph, before reach the goal, we can just count the right edge of each access area and get the min step to the goal.
-The graph as: 
+The graph as: ![](https://github.com/syhcode/Leetcode/blob/master/image/Q45.png)
 
 #### Time Complexity:
 O(n)
