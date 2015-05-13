@@ -2,9 +2,9 @@
 
 ### Solution 1 Recursive
 #### Idea:
-in recursive process, cases are divided into two situations,roughly len/2>k or len/2<k, 
-then from the start position of two parts, swap the elements as much as we can,then update the parameter in function swap().
-For example:[1,2,3,4,5] k=2 can be disposed: [4,5,|3,1,2|(k=2)] -->[4,5,1,|3,2|(k=1)]  -->[4,5,1,2,3] 
+
+in recursive process, cases are divided into two situations,roughly len/2>k or len/2<k,and then from the start position of two parts, swap the elements as much as we can,then update the parameter in function swap().
+for example:[1,2,3,4,5] k=2 can be disposed: [4,5,|3,1,2|(k=2)] -->[4,5,1,|3,2|(k=1)]  -->[4,5,1,2,3] 
 also, [1,2,3,4,5] k=3 can be disposed: [3,4,|1,2,5|(k=1)]  -->[3,4,5,1,2]  
 
 #### Time Complexity:
