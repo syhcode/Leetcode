@@ -50,7 +50,7 @@ public class Solution {
 	          swap(nums,k,start+k,result);
 	          
 	   }
-	      //situation 1:k>len/2
+	      //situation 2:k>len/2
 	      
 	     if (len-start-k-k<0 ){
 	        
