@@ -33,7 +33,7 @@ public class Solution {
 	      int len=nums.length;
 	if(k>=1&&len>k&& result==false){
 	         
-	     //situation 1:k<¡÷len/2 
+	     //situation 1:k<len/2 
 	     
 	  if((len-start-k)-k>=0 ){ 
 	      
@@ -50,7 +50,7 @@ public class Solution {
 	          swap(nums,k,start+k,result);
 	          
 	   }
-	      //situation 1:k>¡÷len/2
+	      //situation 1:k>len/2
 	      
 	     if (len-start-k-k<0 ){
 	        
