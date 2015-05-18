@@ -1,6 +1,6 @@
 ## Q122 [Best Time to Buy and Sell Stock II](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/) 
 
-### Solution 1 DP
+### Solution 1 Greedy
 #### Idea:
 Since can buy and sell this stock for many times, the max profits should be the sum of all possible profits produced from balance of every two neighbors.
 #### Time Complexity:
