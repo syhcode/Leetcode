@@ -2,7 +2,7 @@
 
 ### Solution DP
 #### Idea:
-The same as Q62, however,when meet 1 in obstacle grip,for the initial row and column initiate 0 for remained position,otherwise all 1; and for the rest iterating matrix put =0 in corresponding position,otherwise sum left and up; 
+The same as Q62, however,when meet 1 in obstacle grip,for the initial row and column initiate 0 for remained positions,otherwise all 1; and for the rest iterating matrix put =0 in the corresponding position,otherwise sum left and up; 
 #### Time Complexity:
 O(m*n)
 #### Space Complexity:

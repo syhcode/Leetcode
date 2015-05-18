@@ -35,7 +35,7 @@ public class Solution {
 
 ### Solution 2 DP
 #### Idea:
-each step has two to reach, its left or its up, and the way to this step equals sum of ways to its left or its right.
+each step has two ways to reach, its left or its up, and the sum of ways to this step equals sum of ways to its left or its right.
 #### Time Complexity:
 O(m*n)
 #### Space Complexity:
