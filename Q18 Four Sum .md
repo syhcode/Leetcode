@@ -67,24 +67,24 @@ public class Solution {
      //below, avoid all duplicated pairs,find all two combined pairs sum in the same,like i j loop.
 
                Pair lastA = null;
-                  for (Pair a : map.get(low)) {  
-                     if (a.same(lastA)) {
-                        continue;
-                     }
+        for (Pair a : map.get(low)) {  
+              if (a.same(lastA)) {
+                 continue;
+               }
                      lastA = a; // saved,ensure that the same sum but DIFFERENT pair.
 
-                     Pair lastB = null;
-                     for (Pair b : map.get(high)) {   //avoid all duplicated pairs.
-                         if (a.bIndex < b.aIndex) {  //this condition is toavoid duplicated cout of elements.GENERALLY,
-                                                    // when pick 4 elements, your are supposed to  pick in order.
-                            if (b.same(lastB)) {
-                                continue;
-                            }
-                            lastB = b;
-                            fourSum.add(Arrays.asList(a.a, a.b, b.a, b.b));
-                         }
-                   }
-               }
+                Pair lastB = null;
+             for (Pair b : map.get(high)) {   //avoid all duplicated pairs.
+                if (a.bIndex < b.aIndex) {  //this condition is toavoid duplicated cout of elements.GENERALLY,
+                                            // when pick 4 elements, your are supposed to  pick in order.
+                    if (b.same(lastB)) {
+                     continue;
+                    }
+                   lastB = b;
+                   fourSum.add(Arrays.asList(a.a, a.b, b.a, b.b));
+                }
+              }
+        }
 
                 low = map.higherKey(low);
                 high = map.lowerKey(high);
