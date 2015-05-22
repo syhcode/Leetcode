@@ -1,4 +1,4 @@
-## Q106 [Two Sum](https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/) 
+## Q106 [Construct Binary Tree from Inorder and Postorder Traversal](https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/) 
 
 ### Solution 1 Recursive
 #### Idea:
