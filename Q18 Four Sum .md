@@ -48,8 +48,9 @@ public class Solution {
                     map.put(sum, list);
                 }
                 list.add(new Pair(num[i], i, num[j], j));
-                do {                                // avoid extended duplicated pair ,for ex.[22234555678],in this way instead of 3 times, 
-                    j++;                             //[2,2] will store 2 times,and later will cut the other one time.
+                do {                 // avoid extended duplicated pair ,for ex.[22234555678],in this way instead of 3 times, 
+                    j++;              //[2,2] will store 2 times,and later will cut the other one time.
+
                 } while (j < num.length && num[j] == num[j - 1]);  
             }
         }
@@ -63,16 +64,19 @@ public class Solution {
                 high = map.lowerKey(high);    //smaller value of key
             } else {
                
+     //below, avoid all duplicated pairs,find all two combined pairs sum in the same,like i j loop.
+
                Pair lastA = null;
-                  for (Pair a : map.get(low)) {  //avoid all duplicated pairs,find all two combined pairs sum in the same,like i j loop.
+                  for (Pair a : map.get(low)) {  
                      if (a.same(lastA)) {
                         continue;
                      }
                      lastA = a; // saved,ensure that the same sum but DIFFERENT pair.
 
                      Pair lastB = null;
-                     for (Pair b : map.get(high)) {   //avoid all duplicated pairs
-                         if (a.bIndex < b.aIndex) {  //avoid duplicated cout of elements.GENERALLY,when pick 4 elements, your are supposed to  pick in order.
+                     for (Pair b : map.get(high)) {   //avoid all duplicated pairs.
+                         if (a.bIndex < b.aIndex) {  //this condition is toavoid duplicated cout of elements.GENERALLY,
+                                                    // when pick 4 elements, your are supposed to  pick in order.
                             if (b.same(lastB)) {
                                 continue;
                             }
