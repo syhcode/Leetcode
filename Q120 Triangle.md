@@ -2,7 +2,7 @@
 
 ### Solution 1 Dynamic Programming
 #### Idea: 
-From the last but one row,rebuild the each row by find the ele's min adjacent and plus the ele,the the first row(ele) is the solution. 
+From the last but one row,rebuild the each row by find the ele's min adjacent and plus the ele,then the first row(ele) is the solution. 
 #### Time Complexity:
 O(n^2)
 #### Space Complexity:
