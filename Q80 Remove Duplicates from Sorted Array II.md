@@ -2,7 +2,7 @@
 
 ### Solution 1 Two Pointer
 #### Idea:  
-Same as Q35,but save and skip the first two duplicated elements.
+Same as Q26,but save and skip the first two duplicated elements.
 #### Time Complexity:
 O(n)
 #### Space Complexity:
