@@ -37,7 +37,7 @@ public class Solution {
         for(int i=0;i<len;i++){   // newInterval overlap with Intervals[i]
             if(newInterval.start<=intervals.get(i).end&&newInterval.end>=intervals.get(i).start) {
                 left=Math.min(intervals.get(i).start,newInterval.start);
-                while(newInterval.end>intervals.get(i).end&&i<len-1&&newInterval.end>=intervals.get(i+1).start) i++;
+            while(newInterval.end>intervals.get(i).end&&i<len-1&&newInterval.end>=intervals.get(i+1).start) i++;
                 right=Math.max(intervals.get(i).end,newInterval.end);
                 result.add(new Interval(left,right)); 
                 i++;
