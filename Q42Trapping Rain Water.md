@@ -9,7 +9,7 @@ O(n)
 O(1)
 #### Source code:
 ```
-https://leetcode.com/problems/trapping-rain-water/public class Solution {
+public class Solution {
     public int trap(int[] height) {
      int len=height.length;
      if (len < 3) return 0;
