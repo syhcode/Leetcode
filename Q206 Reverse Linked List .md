@@ -23,7 +23,6 @@ public class Solution {
         if(head == null) return head;
         ListNode next = head.next;
         head.next = null;
-
         return recursive(head,next);
     }
 
