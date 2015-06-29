@@ -2,13 +2,14 @@
 
 ### Solution 1 Hashmap
 #### Idea:
-Build hash map to store<node image,new this node>, then depending on origin nodes connection link new nodes in hash map.
+Build hash map to store (node image,new this node), then depending on origin nodes connection link new nodes in hash map.
 In this way the common O(n^2) time(to get random linked position) solution can be reduce to O(n) time.
 #### Time Complexity: 
 O(n)
 #### Space Complexity:
 O(n)
 #### Source code:
+```
 /**
  * Definition for singly-linked list with a random pointer.
  * class RandomListNode {
