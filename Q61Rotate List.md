@@ -1,6 +1,7 @@
 ## Q61[ Rotate List  ](https://leetcode.com/problems/rotate-list/) 
 
 ### Solution 1 
+#### Idea:
 Since k may be bigger than length of the list, thus count length of the list first and then get the "i-k%i" pointer and do rotation.
 #### Time Complexity: 
 O(n)
