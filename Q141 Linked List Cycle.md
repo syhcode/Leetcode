@@ -69,7 +69,8 @@ public class Solution {
 
    }
 }
+```
 #### Reference:
-[https://leetcode.com/discuss/122/does-everyone-solved-it-with-o-n-complexity](https://leetcode.com/discuss/122/does-everyone-solved-it-with-o-n-complexity)
+[does-everyone-solved-it-with-o-n-complexity](https://leetcode.com/discuss/122/does-everyone-solved-it-with-o-n-complexity)
 ---
 
