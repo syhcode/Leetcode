@@ -2,7 +2,7 @@
 
 ### Solution 1 Recursive
 #### Idea:
-Same as Q99, depend on in-order traversal sequence to do judgment.Pay a attention to the initiation of "pre" when the input "val"
+Same as Q99, depend on in-order traversal sequence to do judgment.Pay a attention to the initiation of the "pre" when the input "val"
 is smaller than Integer.MIN_VALUE. 
 #### Time Complexity: 
 O(n)
@@ -45,6 +45,15 @@ public class Solution {
 }
 ```
 #### Reference:
-
----
+```
+ Integer.MIN_VALUE = -2147483648
+ Integer.MAX_VALUE = 2147483647
+ Long.MIN_VALUE = -9223372036854775808
+ Long.MAX_VALUE = 9223372036854775807
+ Float.MIN_VALUE = 1.4E-45
+ Float.MIN_NORMAL = 1.17549435E-38
+ Float.MAX_VALUE = 3.4028235E38
+ Double.MAX_VALUE = 1.7976931348623157E308
+ Double.MIN_VALUE = 4.9E-324
+```
 

@@ -2,7 +2,7 @@
 
 ### Solution 1 Recursive
 #### Idea:
-In-orderly traverse two Trees,and meanwhile do judgment.
+In-orderly traverse two Trees, and meanwhile do judgment.
 #### Time Complexity: 
 O(n)
 #### Space Complexity:

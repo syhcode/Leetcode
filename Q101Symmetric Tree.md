@@ -19,6 +19,7 @@ O(1)
  * }
  */
  
+ 
 public class Solution {
     public boolean isSymmetric(TreeNode root) {
         if(root==null||root.left==null&&root.right==null) return true;
