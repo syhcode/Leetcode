@@ -39,6 +39,6 @@ public class Solution {
 
 ```
 #### Reference:
-
+[KMP Algorithm](http://blog.csdn.net/yutianzuijin/article/details/11954939)
 ---
 
