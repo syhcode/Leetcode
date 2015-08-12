@@ -2,7 +2,7 @@
 
 ### Solution 1 Recursive
 #### Idea:
-Cases analysis.
+Cases analysis .
 #### Time Complexity: 
 O(n)
 #### Space Complexity:

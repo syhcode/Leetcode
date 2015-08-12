@@ -3,7 +3,7 @@
 ### Solution 1 Bit Manipulation
 #### Idea:
 Considering binary system for each element, if a element appear 3 times, then its '1' of each digit will appear 3 times,
-if not then this digit belong to the single word. 
+if not then this digit belong to the single word . 
 #### Time Complexity: 
 O(n)
 #### Space Complexity:

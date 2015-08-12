@@ -2,7 +2,7 @@
 
 ### Solution 1 Recursive
 #### Idea:
-Find p or q recursively to judge the ancestor node, instead of its value.
+Find p or q recursively to judge the ancestor node, instead of its value .
 #### Time Complexity: 
 O(n)
 #### Space Complexity:

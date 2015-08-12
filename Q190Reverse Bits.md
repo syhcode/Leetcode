@@ -2,7 +2,7 @@
 
 ### Solution 1 Bit Manipulation.
 #### Idea:
-Pay attention to UNSIGNED n and operator ">>>". The input overflow can regard as (int)2147483648L
+Pay attention to UNSIGNED n and operator ">>>". The input overflow can regard as (int)2147483648L.
 #### Time Complexity: 
 O(n)
 #### Space Complexity:

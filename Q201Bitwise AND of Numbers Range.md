@@ -2,7 +2,7 @@
 
 ### Solution 1 Bit manipulation
 #### Idea:
-The same prefix of binary system determine the result, otherwise return 0.
+The same prefix of binary system determine the result, otherwise return 0 .
 #### Time Complexity: 
 O(n)
 #### Space Complexity:

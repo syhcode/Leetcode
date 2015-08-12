@@ -2,7 +2,7 @@
 
 ### Solution 1 Bit Manipulation
 #### Idea:
-The same as Q190
+The same as Q190.
 #### Time Complexity: 
 O(n)
 #### Space Complexity:
