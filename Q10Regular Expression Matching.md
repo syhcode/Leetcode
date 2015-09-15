@@ -2,9 +2,11 @@
 
 ### Solution 1 DP
 #### Idea:
+```
 Use 2D matrix[i+1][j+1] to mark s[0~i],p[0~j] RE matching situation.
-Except '*', other char can do normal DP match.For '*' has 3 opration: * ==1 keep former element;
- * ==0 delete the former and * ==2 append the former,and thus track former matrix to update.
+Except '*', other char can do normal DP match.For * has 3 opration: '*' ==1 keep former element;
+ '*' ==0 delete the former and '*' ==2 append the former,and thus track former matrix to update.
+```
 #### Time Complexity: 
 O(mn)
 #### Space Complexity:
