@@ -1,4 +1,4 @@
-## Q130[Number of Islands](https://leetcode.com/problems/number-of-islands/) 
+## Q130[Surrounded Regions](https://leetcode.com/problems/surrounded-regions/) 
 
 ### Solution 1 BFS,Queue
 #### Idea:
