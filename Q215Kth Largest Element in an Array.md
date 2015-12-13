@@ -25,7 +25,7 @@ public class Solution {
         int pivot = start, temp;
         while (start <= end) {
             while (start <= end && nums[start] <= nums[pivot]) start++;
-            while (start <= end && nums[end] > nums[pivot]) end--;
+            while (start <= end && nums[end] >= nums[pivot]) end--;
             if (start > end) break;
             temp = nums[start];
             nums[start] = nums[end];
