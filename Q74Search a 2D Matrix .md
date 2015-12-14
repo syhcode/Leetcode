@@ -2,7 +2,7 @@
 
 ### Solution 1 Binary Search
 #### Idea:
-Use two binary search to choose a row and search in row.
+Treat it as one dimentional array.
 #### Time Complexity:
 O(log(min(m,n))
 #### Space Complexity:
