@@ -10,37 +10,26 @@ O(1)
 #### Source code:
 ```
 public class Solution {
-    public boolean searchMatrix(int[][] matrix, int target) {
-        int m=matrix.length;
-        int n=matrix[0].length;
-        int row;
-        if(binarySearch_row(matrix,0,m-1, target)==-1) return false; // the end low>high,high=-1.
-        row=binarySearch_row(matrix,0,m-1, target);
-        boolean result=binarySearch( matrix, row,0,n-1,target);
-        return result;
-        
+  public boolean searchMatrix(int[][] matrix, int target) {
+    int row_num = matrix.length;
+    int col_num = matrix[0].length;
+    
+    int begin = 0, end = row_num * col_num - 1;
+    while(begin <= end){
+        int mid = (begin + end) / 2;
+        int mid_value = matrix[mid/col_num][mid%col_num];
+
+        if( mid_value == target){
+            return true;
+        }else if(mid_value < target){
+            //Should move a bit further, otherwise dead loop.
+            begin = mid+1;
+        }else{
+            end = mid-1;
+        }
     }
-    public int binarySearch_row(int[][] matrix, int low,int high,int target){
-         while(low<=high){
-	     int mid=(low+high)/2;
-		 if(target>matrix[mid][0])low=mid+1;
-		 else if(target<matrix[mid][0]) high=mid-1;
-		 
-		 else return -2; //this means the beginning is the target,find it!
-	     }
-	     return high;   //this index refers to the row where target exists.
-   }
-   public boolean binarySearch(int[][] matrix,int row, int low,int high,int target){
-   		 if (row==-2) return true;
-         while(low<=high){
-	     int mid=(low+high)/2;
-		 if(target>matrix[row][mid])low=mid+1;
-		 else if(target<matrix[row][mid]) high=mid-1;
-		 else return true;
-	     }
-			    
-	     return false;
-   }
+    return false;
+  }
 }
         		    
 
