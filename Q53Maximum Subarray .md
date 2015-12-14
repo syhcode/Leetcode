@@ -11,16 +11,16 @@ O(1)
 ```
 public class Solution {
     public int maxSubArray(int[] nums) {
-        int sum=nums[0]; 
-        int result=nums[0];
-        for(int i=1;i<nums.length;i++){
-       
-        if(sum<0) sum=0;
-        sum=sum+nums[i];
-        result=Math.max(result,sum);
-       
-        }
-        return result;
+       int append= 0;
+       int max=nums[0];
+       for(int i= 0; i<nums.length;i++){
+           max=Math.max(append+nums[i],max);
+           if(append+nums[i]>0)
+               append=append+nums[i];
+           else   
+               append=0;
+       }
+      return max; 
     }
 }
 
