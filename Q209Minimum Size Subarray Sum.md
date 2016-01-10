@@ -13,14 +13,11 @@ public class Solution {
 
   public class Solution {
     public int minSubArrayLen(int s, int[] nums) {
- 
         int start = 0, end = 0, sum = 0;
         int minLen = nums.length+1;//all possible no more than this value.
         
         while (end < nums.length) {
-            
             while (end < nums.length && sum < s) sum += nums[end++];
-            if (sum < s) break;
             while (sum >= s) sum -= nums[start++];
             if (end - start + 1 < minLen) minLen = end - start + 1;
         }
