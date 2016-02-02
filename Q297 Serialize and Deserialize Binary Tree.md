@@ -1,6 +1,6 @@
 ## Q297[Serialize and Deserialize Binary Tree](https://leetcode.com/problems/verify-preorder-serialization-of-a-binary-tree/) 
 
-### Solution: Divided and Conquer
+### Solution: Divide and Conquer
 #### Idea: 
 use pre-order traversal to serialize tree, "#" stand for null value;
 #### Time Complexity:
