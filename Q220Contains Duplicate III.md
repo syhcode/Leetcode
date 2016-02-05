@@ -32,7 +32,6 @@ public class Solution {
                 bst.remove(nums[ind - k]);
             }
         }
-
         return false;
     }
 }
