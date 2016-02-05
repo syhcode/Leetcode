@@ -81,6 +81,6 @@ public class Solution {
 }
 ```
 #### Reference:
-BFS method [https://leetcode.com/discuss/71763/share-some-thoughts]
+[BFS method] (https://leetcode.com/discuss/71763/share-some-thoughts)
 ---
 
