@@ -14,11 +14,11 @@ public class Solution {
         if(coins.length==0) return -1;
         int dp[] = new int[amount+1];
         int temp,min;
-        for(int i=1;i<amount+1;i++){
+        for(int i=1;i<amount+1;i++){ // dp[0] = 0!
             min=Integer.MAX_VALUE;
             for(int coin:coins){
                 if(i>=coin && dp[i-coin]!=Integer.MAX_VALUE){
-                   temp=dp[i-coin]+1;
+                   temp=dp[i-coin]+1; 
                    min=Math.min(temp,min);
                 }
             }
