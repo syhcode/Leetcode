@@ -9,31 +9,55 @@ O(n)
 O(n)
 #### Source code:
 ```
-/**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode(int x) { val = x; }
- * }
- */
 public class Solution {
     public List<Integer> postorderTraversal(TreeNode root) {
-        Stack<TreeNode> s=new Stack<>();
-        List<Integer> res=new ArrayList<>();
-        if(root==null) return res;
+        List<Integer> res=new ArrayList<Integer>();
         postrun(root,res);
         return res;
     }
     void postrun(TreeNode root,List<Integer> res){
-         if(root.left!=null) postrun(root.left,res);
-         if(root.right!=null) postrun(root.right,res);
+    	 if(root == null) return;
+         postrun(root.left,res);
+         postrun(root.right,res);
          res.add(root.val);
         
     }
 }
 ```
+### Solution 2 Iterative,stack
+#### Idea:
+postorder == reverse( preorder from right).
+#### Time Complexity: 
+O(n)
+#### Space Complexity:
+O(n)
+#### Source code:
+```
+public class Solution {
+    public List<Integer> postorderTraversal(TreeNode root) {
+        List<Integer> list = new LinkedList<Integer>();
+        if(root == null) return list;
+        Stack<TreeNode> sk = new Stack<TreeNode>();
+        sk.push(root);
+        list.add(0,root.val);
+        while(!sk.isEmpty()){
+            while(root.right!=null){
+                root=root.right;
+                list.add(0,root.val); // insert into first place
+                sk.push(root);
+            }
+            TreeNode temp=sk.pop();
+            if(temp.left!=null){
+                root=temp.left;
+                list.add(0,root.val);
+                sk.push(root);
+            }
+        }
+        return list;
+    }
+}
+```
+
 #### Reference:
 
 ---

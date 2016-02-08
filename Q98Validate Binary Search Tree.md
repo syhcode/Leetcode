@@ -2,7 +2,7 @@
 
 ### Solution 1 Recursive
 #### Idea:
-Same as Q99, depend on in-order traversal sequence to do judgment.Pay a attention to the initiation of the "pre" when the input "val"
+BST: all left children nodes is smaller than its parent Node,all right children nodes is greater than its parent Node,judging recursively.
 is smaller than Integer.MIN_VALUE. 
 #### Time Complexity: 
 O(n)
@@ -10,37 +10,45 @@ O(n)
 O(1)
 #### Source code:
 ```
-/**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode(int x) { val = x; }
- * }
- */
 public class Solution {
-    boolean l=true;
-    boolean firstTime=true;
-    
-    //can not initiate with MIN_VALUE for Long or Integer.
-    TreeNode pre = new TreeNode(0); 
-    
     public boolean isValidBST(TreeNode root) {
-        if(root==null) return true;
-        if(root.left==null&&root.right==null) return true;
-        judge(root);
-        return l;
-        
+       return helper(root, Long.MIN_VALUE,Long.MAX_VALUE);
     }
-    void judge(TreeNode root){
-        if (root==null) return;
-        judge(root.left);
-        if (!firstTime&&pre.val >= root.val) l=false;
-        pre=root;
-        firstTime=false;
-        judge(root.right);
-
+    public boolean helper(TreeNode root, long minval, long maxval){
+        if(root==null) return true;
+        return root.val>minval&&root.val<maxval&&helper(root.left,minval,root.val)&&helper(root.right,root.val,maxval);
+    }
+}
+```
+### Solution 2 iterative,stack
+#### Idea:
+use Stack for inorder traversal,mark the pre-visited root and compare.
+#### Time Complexity: 
+O(n)
+#### Space Complexity:
+O(n)
+#### Source code:
+```
+public class Solution {
+    public boolean isValidBST(TreeNode root) {
+        if(root == null) return true; 
+        Stack<TreeNode> sk = new Stack<TreeNode>();
+        sk.push(root);
+        TreeNode pre =null;
+        while(!sk.isEmpty()){
+            while(root.left!=null){
+                root=root.left;
+                sk.push(root);
+            } 
+            TreeNode temp=sk.pop();
+            if(pre!= null && pre.val>=temp.val ) return false;
+            pre=temp;
+            if(temp.right!=null){
+                root=temp.right;
+                sk.push(root);
+            }
+        }
+        return true;
     }
 }
 ```
