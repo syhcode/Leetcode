@@ -2,8 +2,8 @@
 
 ### Solution 1 Backtrack
 #### Idea:
-Same algorithms with Q46, but sort array first and avoid prefix duplicated number for each different number(same number same position appear only once.)
-while backtracking.
+Same algorithms with Q46, but sort array first and avoid prefix duplicated number for each different number while backtracking(same number same position appears only once).
+
 #### Time Complexity: 
 O(n!) the worst case
 #### Space Complexity:
