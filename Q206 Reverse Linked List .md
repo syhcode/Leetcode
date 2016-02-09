@@ -9,32 +9,42 @@ O(n)
 O(1)
 #### Source code:
 ```
-/**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode(int x) { val = x; }
- * }
- */
- 
 public class Solution {
     public ListNode reverseList(ListNode head) {
-        if(head == null) return head;
-        ListNode next = head.next;
-        head.next = null;
-        return recursive(head,next);
+        ListNode pre =null;
+        return helper(pre, head);
     }
-
-    private ListNode recursive(ListNode head, ListNode next){
-        if(next == null)    return head;
-        ListNode temp = next.next;
-        next.next = head;
-        return recursive(next,temp);
-
+    ListNode helper(ListNode pre,ListNode head){
+        if(head == null) return pre;
+        ListNode temp = head.next;
+        head.next=pre;
+        return helper(head,temp);
     }
 }
 
+```
+### Solution 2 Iterative
+#### Idea:
+use pre and temp nodes to record.
+#### Time Complexity: 
+O(n)
+#### Space Complexity:
+O(1)
+#### Source code:
+```
+public class Solution {
+    public ListNode reverseList(ListNode head) {
+        ListNode pre = null;
+        ListNode temp = null;
+        while(head!=null){
+            temp=head.next;
+            head.next=pre;
+            pre=head;
+            head=temp;
+        }
+        return pre;
+    }
+}
 ```
 #### Reference:
 
