@@ -2,7 +2,7 @@
 
 ### Solution 1 Backtrack
 #### Idea:
-Same algorithms with Q46, but sort array first and avoid prefix duplicated number for each different number
+Same algorithms with Q46, but sort array first and avoid prefix duplicated number for each different number(same number same position appear only once.)
 while backtracking.
 #### Time Complexity: 
 O(n!) the worst case
