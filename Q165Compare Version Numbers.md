@@ -2,7 +2,7 @@
 
 ### Solution 1
 #### Idea:
-Split two String by"\\." and compare sections.
+Split two String by"\\\\." and compare sections; use 0 to compare with remained array.
 #### Time Complexity: 
 O(n)
 #### Space Complexity:
@@ -10,22 +10,21 @@ O(n)
 #### Source code:
 ```
 public class Solution {
-    public int compareVersion(String version1, String version2) {
-        String[] s1=version1.split("\\.");
-        String[] s2=version2.split("\\.");
-        int len=Math.min(s1.length,s2.length);
-        for(int i=0;i<len;i++){
-            int num1=Integer.parseInt(s1[i]);
-            int num2=Integer.parseInt(s2[i]);
-            if(num1>num2) return 1;
-            if(num1<num2) return -1;
+  public int compareVersion(String version1, String version2) {
+    String[] levels1 = version1.split("\\.");
+    String[] levels2 = version2.split("\\.");
+
+    int length = Math.max(levels1.length, levels2.length);
+    for (int i=0; i<length; i++) {
+        Integer v1 = i < levels1.length ? Integer.valueOf(levels1[i]) : 0;
+        Integer v2 = i < levels2.length ? Integer.valueOf(levels2[i]) : 0;
+        int compare = v1.compareTo(v2);
+        if (compare != 0) {
+            return compare;
         }
-        if(s1.length>s2.length&&Integer.parseInt(s1[len])!=0)
-             return 1;
-        if(s1.length<s2.length&&Integer.parseInt(s2[len])!=0)
-            return -1;
-        return 0;
     }
+    return 0;
+  }
 }
 ```
 #### Reference:

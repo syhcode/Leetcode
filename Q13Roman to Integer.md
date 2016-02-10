@@ -2,8 +2,7 @@
 
 ### Solution 1 Hashmap
 #### Idea:
-If a roman number is smaller than its later number, its sign is'+', or the sign is'-'.Sum all value of roman
-numbers showing in the string.
+Add current number first, then If this roman number is smaller than its later number,subtract 2 times of it from the sum because it has been added.
 #### Time Complexity: 
 O(n)
 #### Space Complexity:
@@ -11,30 +10,18 @@ O(1)
 #### Source code:
 ```
 public class Solution {
-  public int romanToInt(String s) {
-    HashMap<Character, Integer> map = new HashMap<>();
-    map.put('I', 1);
-    map.put('V', 5);
-    map.put('X', 10);
-    map.put('L', 50);
-    map.put('C', 100);
-    map.put('D', 500);
-    map.put('M', 1000);
-    int len = s.length();
-    int index = 0, result = 0;
-    while (index < len) {
-        Character chCur = s.charAt(index);
-        Character chNext = null;
-        if (index + 1 < len)
-            chNext = s.charAt(index + 1);
-        if(chNext != null && map.get(chCur) < map.get(chNext))
-            result -= map.get(chCur);
-        else
-            result += map.get(chCur);
-        index++;
+    public int romanToInt(String s) {
+        HashMap<Character,Integer> map=new HashMap<Character,Integer>();        		map.put('I',1);map.put('V',5);map.put('X',10);map.put('L',50);map.put('C',100);map.put('D',500);map.put('M',1000);
+        char pre=' ';
+        int sum=0;
+        for(int i=0;i<s.length();i++){
+            char c =s.charAt(i);
+            sum+=map.get(c);
+            if(pre!=' ' && map.get(c)>map.get(pre)) sum=sum-2*map.get(pre);
+            pre = c;
+        }
+        return sum;
     }
-    return result;
-  }
 }
 ```
 #### Reference:
