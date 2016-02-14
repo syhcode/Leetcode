@@ -10,20 +10,17 @@ O(1)
 #### Source code:
 ```
 public class Solution {
-    public int maxSubArray(int[] nums) {
-       int append= 0;
-       int max=nums[0];
-       for(int i= 0; i<nums.length;i++){
-           max=Math.max(append+nums[i],max);
-           if(append+nums[i]>0)
-               append=append+nums[i];
-           else   
-               append=0;
-       }
-      return max; 
+    public int maxSubArray(int[] nums) { // [3,-1,-5,4]  3/3 3/2  3/0 4/4   ->4
+        int sumMax=Integer.MIN_VALUE;
+        int append =0;
+        for(int i=0;i<nums.length;i++){
+            append+=nums[i]; // 3,2,0,4
+            sumMax=Math.max(sumMax,append); //3,3,3,4
+            if(append<0) append=0;
+        }
+        return sumMax;
     }
 }
-
 ```
 #### In another form:
 In this way just update max-sum of sections.

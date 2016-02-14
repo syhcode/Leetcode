@@ -2,8 +2,7 @@
 
 ### Solution 1 Recursive,DFS
 #### Idea:
-Clone root and its neighbors List in DFS. Only this adjacent root node's graph can be tracked, and it may not a completed graph
-if there is another parallel adjacent root node. 
+Clone root and its neighbors List in DFS.When meet a visited node, return the built copy for this node. 
 #### Time Complexity: 
 O(n)
 #### Space Complexity:
@@ -18,22 +17,17 @@ O(n)
  *     UndirectedGraphNode(int x) { label = x; neighbors = new ArrayList<UndirectedGraphNode>(); }
  * };
  */
-public class Solution {
-    private HashMap<Integer, UndirectedGraphNode> map = new HashMap<>();
+public class Solution { 
+    HashMap<UndirectedGraphNode,UndirectedGraphNode> map = new HashMap<UndirectedGraphNode,UndirectedGraphNode>();
     public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
-        if (node == null) return null;
-        return clone(node);
-    }
-
-    private UndirectedGraphNode clone(UndirectedGraphNode node) {
-        if (map.containsKey(node.label)) return map.get(node.label);// has a cycle
-        
-        UndirectedGraphNode copyNode = new UndirectedGraphNode(node.label);
-        map.put(copyNode.label, copyNode);
-        for (UndirectedGraphNode tmp : node.neighbors) {
-            copyNode.neighbors.add(clone(tmp));
+        if(node==null) return null;
+        UndirectedGraphNode root = new  UndirectedGraphNode(node.label);
+        if(map.containsKey(node)) return map.get(node);
+        map.put(node,root);
+        for(int i=0;i<node.neighbors.size();i++){
+              root.neighbors.add(cloneGraph(node.neighbors.get(i)));
         }
-        return copyNode;
+        return root;
     }
 }
 ```
