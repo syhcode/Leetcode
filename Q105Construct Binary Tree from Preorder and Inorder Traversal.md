@@ -49,6 +49,29 @@ public class Solution {
     }
 }
 
+or:
+use length to partition the left and right parts.
+//pre:[1] [247] [563]  in: [427] [1] [356]     [1],2  2,[1]
+public class Solution {
+    public TreeNode buildTree(int[] preorder, int[] inorder) {
+        if(preorder.length==0||inorder.length==0) return null;
+        return helper(preorder,0,preorder.length-1,inorder,0,inorder.length-1);
+    }
+    TreeNode helper(int[] preorder,int startP,int endP,int[] inorder,int startI, int endI){
+        if(startP>endP || startI>endI) return null; // after deal with inoreder or preoder length==1
+        TreeNode root= new TreeNode(preorder[startP]);
+        int indexRootI=0;
+        for(int i = startI;i<=endI;i++){
+            if(inorder[i]==preorder[startP]) indexRootI=i;//1
+        }
+        int leftlength=indexRootI-startI;
+        TreeNode leftchild= helper(preorder,startP+1,startP+leftlength,inorder,startI,indexRootI-1);
+        TreeNode rightchild=helper(preorder,startP+leftlength+1,endP,inorder,indexRootI+1,endI); 
+        root.left=leftchild;
+        root.right=rightchild;
+        return root;
+    }
+}
 
 ```
 #### Reference:

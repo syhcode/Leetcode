@@ -20,6 +20,23 @@ public class Solution {
 	return Math.min(left,right);
     }
 }
+
+OR:
+
+public class Solution {
+    public int mySqrt(int x) {
+        if(x<2) return x;
+        int left=1,right=x,mid=0;
+        while(right>=left){
+            mid=(left+right)/2;
+            if (mid<=x/mid && (mid+1)>x/(mid+1)) return mid;
+            else if (mid>x/mid) right=mid-1;
+            else left=mid+1;
+        }
+        return mid;
+    }
+}
+
 ```
 #### Reference:
 

@@ -2,61 +2,35 @@
 
 ### Solution 1 Iterative 
 #### Idea:
-Normal iterative Breadth-first Search method for binary tree. Depend on a QUEUE to store the next level elements (current left and right children) while popping 
-the current tree node and storing the val in a list,then display this list(all val of this level) in normal order or in reversed order.
+BFS using queue, judging the marker and change the output order for each level;
 #### Time Complexity: 
-O(2^n)
+O(n)
 #### Space Complexity:
-O(2^n)
+O(n)
 #### Source code:
 ```
-/**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode(int x) { val = x; }
- * }
- */
 public class Solution {
-  public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
-
-    List<List<Integer>> list = new ArrayList<List<Integer>>();
-    Queue<TreeNode> q = new LinkedList<TreeNode>();
-    int switchDirection = 0;
-
-    if(root == null){
-        return list;
-    }
-    q.offer(root);  //  "offer" is a add method for queue.
-
-    while(!q.isEmpty()){
-        List<Integer> l = new ArrayList<Integer>();
-        int size = q.size();
-
-        for(int i = 0; i < size; i++){
-            TreeNode current = q.poll();
-            l.add(current.val);
-
-            if(current.right != null){
-                q.offer(current.right);
+    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+        List<List<Integer>> res = new ArrayList<List<Integer>>();
+        Deque<TreeNode> dq=new LinkedList<TreeNode>();
+        if(root==null) return res;
+        dq.offer(root);
+        int count=0;
+        while (!dq.isEmpty()){
+            int size=dq.size();  
+            List<Integer> list =new LinkedList<Integer>();
+            for(int i=0;i<size;i++){
+                TreeNode temp=dq.poll();  
+                if(temp.left!=null) dq.offer(temp.left); 
+                if(temp.right!=null) dq.offer(temp.right);
+                if(count==0) list.add(temp.val); 
+                else list.add(0,temp.val);
             }
-            if(current.left != null){
-                q.offer(current.left);
-            }
+            count^=1;
+            res.add(list); 
         }
-
-        if(switchDirection % 2 == 0){
-            Collections.reverse(l);
-        }
-        switchDirection++;
-        list.add(l);
+        return res;
     }
-
-    return list;
-  }
-
 }
 ```
 #### Reference:

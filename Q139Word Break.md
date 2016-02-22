@@ -10,18 +10,16 @@ O(n)
 #### Source code:
 ```
 public class Solution {
-    public boolean wordBreak(String s, Set<String> wordDict) {
-        boolean[] dp = new boolean[s.length() + 1];
-        dp[0] = true;
-        for(int i=1; i < s.length()+1; i++){
-            for(int j=0; j < i; j++){
-                if(dp[j] && wordDict.contains(s.substring(j, i))){
-                    dp[i] = true;
-                    break;
-                }
+    public boolean wordBreak(String s, Set<String> wordDict) {  
+        boolean[] mark = new boolean[s.length()+1];
+        mark[0]=true;
+        for(int i=0;i<s.length();i++){
+            for(int j=i+1;j<=s.length();j++){
+                String temp=s.substring(i,j);
+                if( wordDict.contains(temp)&&mark[i] ) mark[j]=true;
             }
         }
-        return dp[s.length()];
+        return mark[s.length()];  
     }
 }
 ```

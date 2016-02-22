@@ -9,24 +9,15 @@ O(n)
 O(1)
 #### Source code:
 ```
-/**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode(int x) { val = x; }
- * }
- */
-public class Solution {
-    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-         if(root==null||root==p||root==q) return root;  //compare Object,not .val
-         TreeNode left= lowestCommonAncestor(root.left,p,q);
-         TreeNode right= lowestCommonAncestor(root.right,p,q);
-         if(left!=null&&right!=null) return root;
-         else return left==null?right:left;
+public class Solution { // assume p,q must under the root.
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {//if only one target node in this tree, return this node.
+     if (root == null || root== p || root==q ) return root;
+        TreeNode left=lowestCommonAncestor(root.left, p, q); 
+        TreeNode right=lowestCommonAncestor(root.right, p, q);
+        if (left==p && right==q || left==q && right==p ) return root; // p become root not found q Or q is root not found p.
+        else return left==null? right:left;  // be p or q
     }
-}
+} 
 ```
 #### Reference:
 ---

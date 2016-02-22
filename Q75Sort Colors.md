@@ -10,36 +10,28 @@ O(1)
 #### Source code:
 ```
 public class Solution {
-
-  public class Solution {
-    public void sortColors(int[] nums) {
-    
-       if(nums==null || nums.length<2) return;
-       int low = 0; 
-       int high = nums.length-1;
-       for(int i = low; i<=high;) {
-      
-           if(nums[i]==0) {
-            
-            int temp = nums[i];
-            nums[i] =nums[low];
-            nums[low]=temp;
-            i++; low++;  //i++ skip the ordered left array
-           }else if(nums[i]==2) {
-            
-              int temp = nums[i];
-              nums[i] = nums[high];
-              nums[high]=temp;
-              high--;  //process disoredered right array.
-           }else {
-               i++;
-           }
-       }
- 
-
+    public void sortColors(int[] nums) {  
+         if(nums.length==0) return;
+         int p=0,len=nums.length;
+         for(int i=0;i<nums.length;i++){
+             if(nums[i]==0){
+                 int temp=nums[i];
+                 nums[i]=nums[p];
+                 nums[p]=temp;
+                 p++;
+             } 
+         }
+         p=len-1;
+         for(int i=len-1;i>=0;i--){
+             if(nums[i]==2){
+                 int temp=nums[i];
+                 nums[i]=nums[p];
+                 nums[p]=temp;
+                 p--;
+             } 
+         }
     }
 }
-
 
 ```
 #### Reference:
